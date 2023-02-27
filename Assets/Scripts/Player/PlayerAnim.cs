@@ -7,10 +7,11 @@ public class PlayerAnim : MonoBehaviour
     [SerializeField]
     Animator anim;
     [SerializeField]
-    float _attackDelay = 1f;
-    [SerializeField]
     float _smoothRotation = 5f;
+    [SerializeField]
+    float _smoothTransition = 5f;
 
+    private bool isResettingMovement;
     private void OnEnable()
     {
         PlayerInput.RightTriggerAction += RightTrigger;
@@ -25,81 +26,56 @@ public class PlayerAnim : MonoBehaviour
 
     private void Update()
     {
-        KeyboardInput();
-        FaceDiraction();
+        TransitionAnimation();
+        ReturnIdleState();
     }
 
-    private void FaceDiraction()
+    private void TransitionAnimation()
     {
-        if (anim.GetBool("Left Trigger"))
+        if (anim.GetFloat("Movement") > 0)
         {
-            FaceLeftDiraction();
+            // rotate the player smoothly to the left by 90 degrees
+            TurnPlayer(90);
         }
-        else if (anim.GetBool("Right Trigger"))
+        else if (anim.GetFloat("Movement") < 0)
         {
-            FaceRightDiraction();
+            TurnPlayer(-90);
         }
         else
         {
-            FaceForwardDiraction();
-        }
+            TurnPlayer(0);
+        } 
     }
 
-    private void KeyboardInput()
+    private void TurnPlayer(float angle)
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        Quaternion Turn = Quaternion.Euler(0, angle, 0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Turn, _smoothRotation * Time.deltaTime);
+    }
+
+    private void ReturnIdleState()
+    {
+        if (anim.GetFloat("Movement") > 0.1f)
         {
-            RightTrigger();
+            anim.SetFloat("Movement", 0, _smoothTransition, Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (anim.GetFloat("Movement") < -0.1f)
         {
-            LeftTrigger();
+            anim.SetFloat("Movement", 0, _smoothTransition, Time.deltaTime);
+        }
+        else
+        {
+            anim.SetFloat("Movement", 0);
         }
     }
 
     private void LeftTrigger()
     {
-        StartCoroutine(AttackLeftDelay());
+        anim.SetFloat("Movement", -1);
     }
 
     private void RightTrigger()
     {
-        StartCoroutine(AttackRightDelay());
+        anim.SetFloat("Movement", 1);
     }
-
-    private void FaceLeftDiraction()
-    {
-        Quaternion LeftRotation = Quaternion.Euler(0, -90, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, LeftRotation, _smoothRotation * Time.deltaTime);
-    }
-
-    private void FaceRightDiraction()
-    { 
-        Quaternion RightRotation = Quaternion.Euler(0, 90, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, RightRotation, _smoothRotation * Time.deltaTime);
-    }
-
-    private void FaceForwardDiraction() 
-    {
-        Quaternion ForwardRotation = Quaternion.Euler(0, 0, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, ForwardRotation, _smoothRotation * Time.deltaTime);
-    }
-
-IEnumerator AttackLeftDelay()
-    {
-        anim.SetBool("Right Trigger", false);
-        anim.SetBool("Left Trigger", true);
-        yield return new WaitForSeconds(_attackDelay);
-        anim.SetBool("Left Trigger", false);
-    }
-
-    IEnumerator AttackRightDelay()
-    {
-        anim.SetBool("Left Trigger", false);
-        anim.SetBool("Right Trigger", true);
-        yield return new WaitForSeconds(_attackDelay);
-        anim.SetBool("Right Trigger", false);
-    }
-
-
 }
