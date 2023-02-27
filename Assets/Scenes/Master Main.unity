@@ -1181,8 +1181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1555989523}
-  _attackDelay: 0.5
   _smoothRotation: 5
+  _smoothTransition: 0.5
 --- !u!1001 &1598298120
 PrefabInstance:
   m_ObjectHideFlags: 0
