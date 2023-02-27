@@ -1180,9 +1180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea92dfc396573f4ebc95e9d09e2c310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 1555989523}
-  _smoothRotation: 5
-  _smoothTransition: 0.5
+  _anim: {fileID: 1555989523}
+  _attackDuration: 1.5
 --- !u!1001 &1598298120
 PrefabInstance:
   m_ObjectHideFlags: 0
