@@ -9,7 +9,6 @@ public class PlayerAnim : MonoBehaviour
     [SerializeField]
     float _attackDuration = 0.5f;
 
-    private bool isResettingMovement;
     private void OnEnable()
     {
         PlayerInput.RightTriggerAction += RightTrigger;
@@ -24,15 +23,15 @@ public class PlayerAnim : MonoBehaviour
 
     private void LeftTrigger()
     {
-        StartCoroutine(Trigger("Left Trigger", "Right Trigger"));
+        StartCoroutine(TriggerAttackAnim("Left Trigger", "Right Trigger"));
     }
 
     private void RightTrigger()
     {
-        StartCoroutine(Trigger("Right Trigger", "Left Trigger"));
+        StartCoroutine(TriggerAttackAnim("Right Trigger", "Left Trigger"));
     }
 
-    IEnumerator Trigger(string triggerEnable, string triggerDisable)
+    IEnumerator TriggerAttackAnim(string triggerEnable, string triggerDisable)
     {
         _anim.SetBool(triggerDisable, false);
         _anim.SetBool(triggerEnable, true);
