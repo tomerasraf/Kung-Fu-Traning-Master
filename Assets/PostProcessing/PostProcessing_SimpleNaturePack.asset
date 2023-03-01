@@ -31,7 +31,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 0.55
   contrast:
     m_OverrideState: 0
     m_Value: 5
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 9
+    m_Value: 37.5
 --- !u!114 &-1887216633223150654
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   color:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
@@ -65,10 +65,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.274
+    m_Value: 0.292
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.241
+    m_Value: 0.563
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -87,13 +87,13 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.17
+    m_Value: 0.38
   scatter:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 0.284
   clamp:
     m_OverrideState: 1
     m_Value: 65472
@@ -152,16 +152,16 @@ MonoBehaviour:
     m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 40
+    m_Value: 10.4
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 60
+    m_Value: 0
   gaussianMaxRadius:
     m_OverrideState: 1
     m_Value: 1.5
   highQualitySampling:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   focusDistance:
     m_OverrideState: 1
     m_Value: 1
@@ -195,7 +195,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
 --- !u!114 &7841816287603098665
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -230,10 +230,10 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.97275555, z: 0.9861048, w: -0.00037540786}
+    m_Value: {x: 0.8009482, y: 0.9808746, z: 1, w: -0.030427998}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9460329, z: 0.96796477, w: 0.0007508157}
+    m_Value: {x: 1, y: 0.9460329, z: 0.96796477, w: 0.060856003}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 0.9186613, y: 0.93573105, z: 1, w: -1.1365357e-11}
+    m_Value: {x: 0.9186613, y: 0.93573105, z: 1, w: -0.079639204}

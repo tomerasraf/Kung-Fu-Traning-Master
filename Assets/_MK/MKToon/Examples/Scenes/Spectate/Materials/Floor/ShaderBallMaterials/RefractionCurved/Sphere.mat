@@ -15,18 +15,33 @@ MonoBehaviour:
   version: 1
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sphere
   m_Shader: {fileID: 4800000, guid: d99e0f389b1a84a4c8ac98863b78095b, type: 3}
-  m_ShaderKeywords: _FRESNELHIGHLIGHTS_ON _MK_BLEND_CUSTOM _MK_DETAIL_BLEND_MIX _MK_DIFFUSE_MODE_OREN_NAYAR
-    _MK_ENVIRONMENT_REFLECTIONS_ADVANCED _MK_FRESNEL_HIGHLIGHTS _MK_INDEX_OF_REFRACTION
-    _MK_OUTLINE_BAKED _MK_RECEIVE_SHADOWS _MK_REFRACTION_DISTORTION_MAP _MK_SPECULAR_ISOTROPIC
-    _MK_SPECULAR_MODE_ISOTROPIC _MK_SURFACE_TYPE_TRANSPARENT _MK_WRAPPED_DIFFUSE
-    _OVERWRITEBLEND_ON _RECEIVESHADOWS_ON _WRAPPEDLIGHTING_ON
+  m_ValidKeywords:
+  - _MK_ARTISTIC_ANIMATION_STUTTER
+  - _MK_DETAIL_BLEND_MIX
+  - _MK_ENVIRONMENT_REFLECTIONS_ADVANCED
+  - _MK_FRESNEL_HIGHLIGHTS
+  - _MK_INDEX_OF_REFRACTION
+  - _MK_RECEIVE_SHADOWS
+  - _MK_REFRACTION_DISTORTION_MAP
+  - _MK_SPECULAR_ISOTROPIC
+  - _MK_SURFACE_TYPE_TRANSPARENT
+  - _MK_WRAPPED_DIFFUSE
+  m_InvalidKeywords:
+  - _FRESNELHIGHLIGHTS_ON
+  - _MK_BLEND_CUSTOM
+  - _MK_DIFFUSE_MODE_OREN_NAYAR
+  - _MK_OUTLINE_BAKED
+  - _MK_SPECULAR_MODE_ISOTROPIC
+  - _OVERWRITEBLEND_ON
+  - _RECEIVESHADOWS_ON
+  - _WRAPPEDLIGHTING_ON
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -139,6 +154,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _OutlineMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _RefractionDistortionMap:
         m_Texture: {fileID: 2800000, guid: 6c8ded7dae09977458bde1e5a554f3d9, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -183,8 +202,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AdvancedTab: 1
+    - _AlbedoMapIntensity: 1
     - _AlphaClip: 0
     - _AlphaClipping: 0
     - _AlphaCutoff: 0.5
@@ -232,6 +265,7 @@ Material:
     - _HatchingMapScale: 1
     - _HeightMapScale: 0.5
     - _IndexOfRefraction: 0.2
+    - _IndirectFade: 1
     - _Initialized: 1
     - _InputTab: 1
     - _Iridescence: 0
@@ -259,6 +293,8 @@ Material:
     - _OptionsTab: 1
     - _Outline: 7
     - _OutlineData: 0
+    - _OutlineFadeMax: 2
+    - _OutlineFadeMin: 0.25
     - _OutlineMode: 1
     - _OutlineNoise: 0
     - _OutlineSize: 0.0025
@@ -316,7 +352,7 @@ Material:
     m_Colors:
     - _AlbedoColor: {r: 0, g: 0.3019608, b: 0.49019608, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.588, g: 0.588, b: 0.588, a: 1}
+    - _Color: {r: 0, g: 0.30196077, b: 0.490196, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _DissolveColor: {r: 1, g: 1, b: 1, a: 0.5}
@@ -335,3 +371,4 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 0.19999993, g: 0.19999993, b: 0.19999993, a: 1}
     - _VertexAnimationFrequency: {r: 2.5, g: 2.5, b: 2.5, a: 1}
+  m_BuildTextureStacks: []
