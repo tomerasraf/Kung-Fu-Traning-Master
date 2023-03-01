@@ -36,5 +36,6 @@ public class FlyingObject : MonoBehaviour
     void ThrowObject()
     {
         _rigidbody.AddForce(new Vector3(0, 1,-1) * _flyingForce, ForceMode.Impulse);
+        _rigidbody.AddTorque(new Vector3(1, 1, 1) * _flyingForce, ForceMode.Impulse);
     }
 }

@@ -39,10 +39,10 @@ ModelImporter:
       name: ANIM RP SPINNING BACK FIST
       takeName: ANIM RP SPINNING BACK FIST
       internalID: 0
-      firstFrame: 0
+      firstFrame: 28.6
       lastFrame: 63
       wrapMode: 0
-      orientationOffsetY: -33
+      orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0

@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
-
+using System.Collections;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField]
+    float _canHitDuration = 0.3f;
+
     public static PlayerInput Instance { get; private set; }
     public bool IsHitLeft { get; private set; } = false;
     public bool IsHitRight { get; private set; } = false;
@@ -25,26 +28,25 @@ public class PlayerInput : MonoBehaviour
 
     public void LeftTrigger()
     {
-        IsHitLeft = true;
+        StartCoroutine(HitLeftState());
         RightTriggerAction?.Invoke();
-        Invoke("HitLeftState", 0.1f);
-
     }
     public void RightTrigger()
     {
-        IsHitRight = true;
+        StartCoroutine(HitRightState());
         LeftTriggerAction?.Invoke();
-        Invoke("HitRightState", 0.1f);
     }
 
-    private void HitRightState()
+    IEnumerator HitLeftState()
     {
-        IsHitRight = !IsHitRight;
-    }
-    private void HitLeftState()
+        IsHitLeft = true;
+        yield return new WaitForSeconds(_canHitDuration);
+        IsHitLeft = false;
+    } 
+    IEnumerator HitRightState()
     {
-        IsHitLeft = !IsHitLeft;
-    }
-
-    
+        IsHitRight = true;
+        yield return new WaitForSeconds(_canHitDuration);
+        IsHitRight = false;
+    } 
 }
