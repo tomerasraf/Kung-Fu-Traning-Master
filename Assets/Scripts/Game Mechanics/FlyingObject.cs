@@ -16,14 +16,22 @@ public class FlyingObject : MonoBehaviour
         ThrowObject();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void BrakeObject()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            _flyingObject.SetActive(false);
-            _brokenObject.SetActive(true);
-        }
+        _flyingObject.SetActive(false);
+        _brokenObject.SetActive(true);
     }
+
+
+    // player Hands Hit Virsion
+    /*   private void OnTriggerEnter(Collider other)
+       {
+           if (other.gameObject.CompareTag("Player"))
+           {
+               _flyingObject.SetActive(false);
+               _brokenObject.SetActive(true);
+           }
+       }*/
 
     void ThrowObject()
     {
