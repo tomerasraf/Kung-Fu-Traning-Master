@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flyingObject: {fileID: 6829813631209190489}
   _brokenObject: {fileID: 6829813630427567964}
+  _rigidbody: {fileID: 2249382020023277683}
+  _flyingForce: 5
 --- !u!65 &5345722636714160520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61,8 +63,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38381815, y: 0.28501415, z: 0.35746026}
-  m_Center: {x: -0.48802447, y: -0.88619983, z: 1.8460194}
+  m_Size: {x: 0.48806834, y: 0.5388843, z: 0.4738175}
+  m_Center: {x: 0.00837338, y: 0.034079492, z: -0.010406092}
 --- !u!54 &2249382020023277683
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74,8 +76,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -92,15 +94,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 929b5d11203a21b409309a7a1a7dc990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.49062544
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 929b5d11203a21b409309a7a1a7dc990, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9119023
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 929b5d11203a21b409309a7a1a7dc990, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8481028
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 929b5d11203a21b409309a7a1a7dc990, type: 3}
       propertyPath: m_LocalRotation.w
@@ -159,15 +161,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90e6a64108f35e741b430a8fffdf5943, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.49062544
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90e6a64108f35e741b430a8fffdf5943, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9119023
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90e6a64108f35e741b430a8fffdf5943, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8481028
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90e6a64108f35e741b430a8fffdf5943, type: 3}
       propertyPath: m_LocalRotation.w

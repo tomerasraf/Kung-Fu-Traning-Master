@@ -6,6 +6,15 @@ public class FlyingObject : MonoBehaviour
     GameObject _flyingObject;
     [SerializeField]
     GameObject _brokenObject;
+    [SerializeField]
+    Rigidbody _rigidbody;
+    [SerializeField]
+    float _flyingForce;
+
+    private void Start()
+    {
+        ThrowObject();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,5 +23,10 @@ public class FlyingObject : MonoBehaviour
             _flyingObject.SetActive(false);
             _brokenObject.SetActive(true);
         }
+    }
+
+    void ThrowObject()
+    {
+        _rigidbody.AddForce(new Vector3(0, 1,-1) * _flyingForce, ForceMode.Impulse);
     }
 }
