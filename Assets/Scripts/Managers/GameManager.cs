@@ -28,18 +28,20 @@ public class GameManager : MonoBehaviour
 
     public void DecreaseChances()
     {
+        Chances--;
+        UIManager.Instance.UpdateChancesText();
+
+
         if (Chances <= 0)
         {
             isGameOver = true;
             return;
         }
-
-        Chances--;
-        UIManager.Instance.UpdateChancesText();
     }
 
     public void ResetChances()
     {
+        UIManager.Instance.UpdateResetChances();
         Chances = MAX_CHANCES;
     }
 }
