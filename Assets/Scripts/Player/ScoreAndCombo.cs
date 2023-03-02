@@ -6,8 +6,9 @@ public class ScoreAndCombo : MonoBehaviour
 {
     public static ScoreAndCombo instance;
 
-    public int score { get; private set; } = 0;
-    public int combo { get; private set; } = 0;
+    public int Score { get; private set; } = 0;
+    public int Combo { get; private set; } = 1;
+    public int PlayerHits { get; private set; } = 0;
 
     private void Awake()
     {
@@ -24,17 +25,20 @@ public class ScoreAndCombo : MonoBehaviour
 
     public void AddScore(int _score)
     {
-        score += _score * combo;
+        PlayerHits++;
+        Score += _score * Combo;
     }
 
     public void ResetCombo()
     {
-        combo = 0;
+        PlayerHits = 0;
+        Combo = 1;
     }
 
     public  void IncreaseCombo()
     {
-        combo++;
+        if(PlayerHits >= 5)
+        Combo++;
     }
 
 }

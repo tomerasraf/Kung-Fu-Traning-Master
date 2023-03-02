@@ -15,6 +15,9 @@ public class UIManager : MonoBehaviour
     TextMeshProUGUI _score;
     [SerializeField]
     TextMeshProUGUI _combo;
+    [SerializeReference]
+    RectTransform comboTextRectTransform;
+
 
     private void Awake()
     {
@@ -31,12 +34,18 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        _score.text = ScoreAndCombo.instance.score.ToString();
+        _score.text = ScoreAndCombo.instance.Score.ToString();
     }
 
-    public void UpdateCombo()
+    public void UpdateCombo(Transform brokenObjectTransform)
     {
-        _combo.text = ScoreAndCombo.instance.combo.ToString();
+        if (ScoreAndCombo.instance.PlayerHits >= 5)
+        {
+            Vector3 worldPosition = brokenObjectTransform.position;
+            Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
+            _combo.text = ScoreAndCombo.instance.Combo.ToString() + "X";
+            DotweenUtils.MoveUpFadeOut(_combo, 0.5f, screenPosition);
+        }
     }
 
     public void UpdateResetChances()

@@ -301,7 +301,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693921205}
-  m_LocalRotation: {x: 0.00058785756, y: 0.9929274, z: -0.1186199, w: 0.004920758}
+  m_LocalRotation: {x: 0.00058785727, y: 0.9929274, z: -0.11861988, w: 0.0049207574}
   m_LocalPosition: {x: -0.09, y: 3.25, z: 9.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -561,7 +561,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.00058785756, y: 0.9929274, z: -0.1186199, w: 0.004920758}
+  m_LocalRotation: {x: 0.00058785727, y: 0.9929274, z: -0.11861988, w: 0.0049207574}
   m_LocalPosition: {x: -0.09, y: 3.25, z: 9.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1205,6 +1205,7 @@ MonoBehaviour:
   - {fileID: 516132204}
   _score: {fileID: 1384602600}
   _combo: {fileID: 1824596549}
+  comboTextRectTransform: {fileID: 0}
 --- !u!114 &2003191516 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3317387831969207759, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}

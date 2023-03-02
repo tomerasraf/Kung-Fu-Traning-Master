@@ -12,7 +12,8 @@ public class RightHitCollider : MonoBehaviour
                 {
                     GameManager.instance.ResetChances();
                     ScoreAndCombo.instance.IncreaseCombo();
-                    ScoreAndCombo.instance.AddScore(10);
+                    UIManager.Instance.UpdateCombo(flyingObject.transform);
+                    ScoreAndCombo.instance.AddScore(5);
                     UIManager.Instance.UpdateScore();
                     flyingObject.BrakeObject();
                     Destroy(flyingObject);

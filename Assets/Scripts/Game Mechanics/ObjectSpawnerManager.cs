@@ -4,6 +4,8 @@ using UnityEngine;
 public class ObjectSpawnerManager : MonoBehaviour
 {
     [SerializeField]
+    float _spawnStartDelay = 3f;
+    [SerializeField]
     Transform[] _spawnPoints;
     [SerializeField]
     GameObject[] _objects;
@@ -23,6 +25,8 @@ public class ObjectSpawnerManager : MonoBehaviour
 
     IEnumerator SpawnObject()
     {
+        yield return new WaitForSeconds(_spawnStartDelay);
+
         while (GameManager.instance.isGameOver == false)
         {
             SpawnRandomObject();
