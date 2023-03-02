@@ -31,6 +31,8 @@ public class FlyingObject : MonoBehaviour
         _flyingObject.SetActive(false);
         _brokenObject.SetActive(true);
 
+        _rigidbody.AddExplosionForce(10, transform.position, 2, 1, ForceMode.Impulse);
+
         Destroy(gameObject, 3f);
     }
 

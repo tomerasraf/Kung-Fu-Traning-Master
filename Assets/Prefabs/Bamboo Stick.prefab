@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5696814693070741962}
   - component: {fileID: 3996815483486591762}
   - component: {fileID: 5769347869263340582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bamboo Stick
   m_TagString: FlyingObject
   m_Icon: {fileID: 0}
@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bamboo_Sticks
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cc6b6f23d69cbbf43961c5c6e9672609, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc6b6f23d69cbbf43961c5c6e9672609, type: 3}
 --- !u!1 &2309412908196141964 stripped
@@ -199,13 +203,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5357232741723650800, guid: c2242130de9efbb4bb67824bd73759c9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c2242130de9efbb4bb67824bd73759c9, type: 3}
       propertyPath: m_Name
       value: Brake_Bamboo Sticks
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c2242130de9efbb4bb67824bd73759c9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2242130de9efbb4bb67824bd73759c9, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463607395437591702, guid: c2242130de9efbb4bb67824bd73759c9, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2242130de9efbb4bb67824bd73759c9, type: 3}

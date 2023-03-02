@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4647668370854539319}
   - component: {fileID: 2121180773149588095}
   - component: {fileID: 4408522932143553619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water-Jug
   m_TagString: FlyingObject
   m_Icon: {fileID: 0}
@@ -137,6 +137,10 @@ PrefabInstance:
       value: Water_Jugs
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d9ff8c58e1bb3764eb210bb08b2915a8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9ff8c58e1bb3764eb210bb08b2915a8, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -159,6 +163,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4186562055380992720}
     m_Modifications:
+    - target: {fileID: -9063612046057944672, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8932228123971874081, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -203,13 +215,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7654834917650794201, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7139628138454193019, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5337294064738568997, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
       propertyPath: m_Name
       value: Brake_Water_Jugs
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988681870008352767, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142457759427804622, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899997947966341668, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000379942957754619, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037276376022237825, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa569652b2bfff640a089f2ae60353ed, type: 3}
