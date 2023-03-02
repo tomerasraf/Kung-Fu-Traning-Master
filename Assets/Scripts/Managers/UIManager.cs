@@ -8,7 +8,13 @@ public class UIManager : MonoBehaviour
 
     [Header("Chances Text")]
     [SerializeField]
-    private TextMeshProUGUI[] chancesTexts;
+    private TextMeshProUGUI[] _chancesTexts;
+
+    [Header("Score & Combo")]
+    [SerializeField]
+    TextMeshProUGUI _score;
+    [SerializeField]
+    TextMeshProUGUI _combo;
 
     private void Awake()
     {
@@ -23,17 +29,27 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void UpdateScore(int score)
+    {
+        _score.text = score.ToString();
+    }
+
+    public void UpdateCombo(int combo)
+    {
+        _combo.text = combo.ToString();
+    }
+
     public void UpdateResetChances()
     {
-        for (int i = 0; i < chancesTexts.Length; i++)
+        for (int i = 0; i < _chancesTexts.Length; i++)
         {
-            DotweenUtils.ReversePopoutScale(chancesTexts[i].transform, 0.5f, 0f);       
+            DotweenUtils.ReversePopoutScale(_chancesTexts[i].transform, 0.5f, 0f);
         }
     }
 
     public void UpdateChancesText()
     {
-        DotweenUtils.ScalePopout(chancesTexts[GameManager.instance.Chances].transform, 0.5f, 1f);
-        chancesTexts[GameManager.instance.Chances].gameObject.SetActive(true);
+        DotweenUtils.ScalePopout(_chancesTexts[GameManager.instance.Chances].transform, 0.5f, 1f);
+        _chancesTexts[GameManager.instance.Chances].gameObject.SetActive(true);
     }
 }
