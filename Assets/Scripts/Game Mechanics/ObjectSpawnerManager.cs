@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectSpawnerManager : MonoBehaviour
@@ -19,12 +18,12 @@ public class ObjectSpawnerManager : MonoBehaviour
         GameObject randomGameObject = _objects[Random.Range(0, _objects.Length)];
         Vector3 randomSpawn = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
 
-        Instantiate(randomGameObject, randomSpawn, Quaternion.identity * Quaternion.Euler(0,180,0));
+        Instantiate(randomGameObject, randomSpawn, Quaternion.identity * Quaternion.Euler(0, 180, 0));
     }
 
     IEnumerator SpawnObject()
     {
-        while (true)
+        while (GameManager.instance.isGameOver == false)
         {
             SpawnRandomObject();
             yield return new WaitForSeconds(Random.Range(1, 3));

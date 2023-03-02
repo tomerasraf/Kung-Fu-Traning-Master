@@ -1,6 +1,6 @@
 using System;
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -42,11 +42,11 @@ public class PlayerInput : MonoBehaviour
         IsHitLeft = true;
         yield return new WaitForSeconds(_canHitDuration);
         IsHitLeft = false;
-    } 
+    }
     IEnumerator HitRightState()
     {
         IsHitRight = true;
         yield return new WaitForSeconds(_canHitDuration);
         IsHitRight = false;
-    } 
+    }
 }
