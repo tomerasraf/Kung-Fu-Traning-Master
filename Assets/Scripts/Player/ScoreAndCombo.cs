@@ -2,22 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ScoreAndCombo
+public class ScoreAndCombo : MonoBehaviour
 {
-    public static int score = 0;
-    public static int combo = 1;
+    public static ScoreAndCombo instance;
 
-    public static void AddScore(int score)
+    public int score { get; private set; } = 0;
+    public int combo { get; private set; } = 0;
+
+    private void Awake()
     {
-        score += score * combo;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public static void ResetCombo()
+    public void AddScore(int _score)
     {
-        combo = 1;
+        score += _score * combo;
     }
 
-    public static void IncreaseCombo()
+    public void ResetCombo()
+    {
+        combo = 0;
+    }
+
+    public  void IncreaseCombo()
     {
         combo++;
     }

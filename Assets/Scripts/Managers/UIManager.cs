@@ -29,14 +29,14 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UpdateScore(int score)
+    public void UpdateScore()
     {
-        _score.text = score.ToString();
+        _score.text = ScoreAndCombo.instance.score.ToString();
     }
 
-    public void UpdateCombo(int combo)
+    public void UpdateCombo()
     {
-        _combo.text = combo.ToString();
+        _combo.text = ScoreAndCombo.instance.combo.ToString();
     }
 
     public void UpdateResetChances()

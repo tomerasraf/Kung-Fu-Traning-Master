@@ -23,7 +23,7 @@ public class FlyingObject : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Floor"))
         {
-            ScoreAndCombo.ResetCombo();
+            ScoreAndCombo.instance.ResetCombo();
             GameManager.instance.DecreaseChances();
             Destroy(this);
         }
