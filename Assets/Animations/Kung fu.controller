@@ -58,7 +58,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ANIM LP SPINNING BACK FIST
-  m_Speed: 3
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1735556197893617931}
@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 4418309649380447650, guid: 84582b7830553a0438605c4fbe536260, type: 3}
+  m_Motion: {fileID: 3156553914571732868, guid: a8c3e9b98a41e7a479a8a9c3493058d8, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -117,9 +117,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.07576687
-  m_TransitionOffset: 0.13287102
-  m_ExitTime: 0.06309166
+  m_TransitionDuration: 0.0049917763
+  m_TransitionOffset: 0
+  m_ExitTime: 0
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -142,9 +142,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.13339408
-  m_TransitionOffset: 0.032799643
-  m_ExitTime: 0.029026315
+  m_TransitionDuration: 0.0046238536
+  m_TransitionOffset: 0.056229457
+  m_ExitTime: 0.005127907
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -244,9 +244,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.14211199
-  m_TransitionOffset: 0.16183203
-  m_ExitTime: 0.0768434
+  m_TransitionDuration: 0.0068076793
+  m_TransitionOffset: 0
+  m_ExitTime: 0.00082050724
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -269,9 +269,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.08199254
-  m_TransitionOffset: 0.03970746
-  m_ExitTime: 0.038639545
+  m_TransitionDuration: 0.008030367
+  m_TransitionOffset: 0
+  m_ExitTime: 0.038639523
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -285,7 +285,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ANIM RP SPINNING BACK FIST
-  m_Speed: 3
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5216445641688334921}
@@ -299,7 +299,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3481278807136440715, guid: 7207d3726bca96444bbef47ac188f6dd, type: 3}
+  m_Motion: {fileID: -27113669752824057, guid: b7d34c488affaac4dabb39547ae2eae6, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
