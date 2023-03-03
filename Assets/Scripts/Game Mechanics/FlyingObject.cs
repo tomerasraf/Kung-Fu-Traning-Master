@@ -1,4 +1,5 @@
 using UnityEngine;
+using MoreMountains.Feedbacks;
 
 public class FlyingObject : MonoBehaviour
 {
@@ -7,9 +8,11 @@ public class FlyingObject : MonoBehaviour
     [SerializeField]
     GameObject _brokenObject;
     [SerializeField]
-    Rigidbody _rigidbody;
+    Rigidbody _flyingObjectRB;
     [SerializeField]
     float _flyingForce;
+    [SerializeField]
+    MMF_Player _playerFeedbacks;
 
     private void Start()
     {
@@ -31,18 +34,20 @@ public class FlyingObject : MonoBehaviour
 
     public void BrakeObject()
     {
+        _playerFeedbacks.PlayFeedbacks();
         _flyingObject.SetActive(false);
         _brokenObject.SetActive(true);
-
-        _rigidbody.AddExplosionForce(10, transform.position, 2, 1, ForceMode.Impulse);
-
+        
         Destroy(gameObject, 3f);
     }
 
     void ThrowObject()
     {
-        _rigidbody.AddForce(new Vector3(0, 1 * 4 , -1 * 8) , ForceMode.Impulse);
-        _rigidbody.AddTorque(new Vector3(1, 1, 1) * _flyingForce, ForceMode.Impulse);
+        _flyingObjectRB.AddForce(new Vector3(0, 1 * 4 , -1 * 8) , ForceMode.Impulse);
+
+        // Random torque to make the object spin
+        _flyingObjectRB.AddTorque(new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)) * 7, ForceMode.Impulse);
+
     }
 
     // player Hands Hit Virsion

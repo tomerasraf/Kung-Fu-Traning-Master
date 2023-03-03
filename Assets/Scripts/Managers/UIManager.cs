@@ -14,10 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _score;
     [SerializeField]
-    TextMeshProUGUI _combo;
-    [SerializeReference]
-    RectTransform comboTextRectTransform;
-
+    TextMeshProUGUI _combo; 
 
     private void Awake()
     {

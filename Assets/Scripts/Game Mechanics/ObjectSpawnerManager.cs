@@ -25,12 +25,34 @@ public class ObjectSpawnerManager : MonoBehaviour
 
     IEnumerator SpawnObject()
     {
-        yield return new WaitForSeconds(_spawnStartDelay);
+        /*yield return new WaitForSeconds(_spawnStartDelay);
 
         while (GameManager.instance.isGameOver == false)
         {
             SpawnRandomObject();
             yield return new WaitForSeconds(Random.Range(1, 3));
+        }*/
+
+        float spawnDelay = _spawnStartDelay;
+        float shortPauseDuration = 1f;
+
+        yield return new WaitForSeconds(spawnDelay);
+
+        while (GameManager.instance.isGameOver == false)
+        {
+            SpawnRandomObject();
+
+            // Reduce the delay between spawns by a small amount
+            spawnDelay = Mathf.Max(0.35f, spawnDelay - 0.1f);
+
+            // Wait for the new spawn delay before spawning the next object
+            yield return new WaitForSeconds(spawnDelay);
+
+            // Reduce the short pause duration by a small amount
+            shortPauseDuration = Mathf.Max(0.35f, shortPauseDuration - 0.05f);
+
+            // Pause for a short duration before starting the next wave of objects
+            yield return new WaitForSeconds(shortPauseDuration);
         }
     }
 }
