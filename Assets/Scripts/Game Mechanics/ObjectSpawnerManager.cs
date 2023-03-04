@@ -10,6 +10,14 @@ public class ObjectSpawnerManager : MonoBehaviour
     [SerializeField]
     GameObject[] _objects;
 
+    private int levelObjectCount = 0;
+    private int levelObjectLimit = 0;
+
+    private void Awake()
+    {
+        levelObjectLimit = LevelManager.instance.Level * 10;
+    }
+
     private void Start()
     {
         StartCoroutine(SpawnObject());
@@ -17,28 +25,27 @@ public class ObjectSpawnerManager : MonoBehaviour
 
     void SpawnRandomObject()
     {
+        if (levelObjectCount >= levelObjectLimit)
+        {
+            LevelManager.instance.CompleteLevel();
+            return;
+        }
+
         GameObject randomGameObject = _objects[Random.Range(0, _objects.Length)];
         Vector3 randomSpawn = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
 
         Instantiate(randomGameObject, randomSpawn, Quaternion.identity * Quaternion.Euler(0, 180, 0));
+        levelObjectCount++;
     }
 
     IEnumerator SpawnObject()
     {
-        /*yield return new WaitForSeconds(_spawnStartDelay);
-
-        while (GameManager.instance.isGameOver == false)
-        {
-            SpawnRandomObject();
-            yield return new WaitForSeconds(Random.Range(1, 3));
-        }*/
-
         float spawnDelay = _spawnStartDelay;
         float shortPauseDuration = 1f;
 
         yield return new WaitForSeconds(spawnDelay);
 
-        while (GameManager.instance.isGameOver == false)
+        while (GameManager.instance.isGameOver == false && LevelManager.instance.IsLevelComplete == false)
         {
             SpawnRandomObject();
 
@@ -53,6 +60,9 @@ public class ObjectSpawnerManager : MonoBehaviour
 
             // Pause for a short duration before starting the next wave of objects
             yield return new WaitForSeconds(shortPauseDuration);
+
+            yield return null;
         }
+        yield break;
     }
 }

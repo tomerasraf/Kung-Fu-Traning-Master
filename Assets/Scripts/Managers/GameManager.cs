@@ -1,9 +1,11 @@
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    public static event Action OnGameOver;
+    
     private const int MAX_CHANCES = 3;
     public int Chances { get; private set; } = MAX_CHANCES;
     public bool isGameOver { get; private set; } = false;
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
         if (Chances <= 0)
         {
             isGameOver = true;
+            OnGameOver?.Invoke();
             return;
         }
     }

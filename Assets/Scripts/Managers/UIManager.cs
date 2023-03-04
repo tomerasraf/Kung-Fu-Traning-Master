@@ -1,10 +1,30 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+
+    [Header("Game Over UI")]
+    [SerializeField]
+    GameObject _gameOverUI;
+    [SerializeField]
+    RectTransform _gameOverTitle;
+    [SerializeField]
+    RectTransform _tryAgainButton;
+
+    [Header("Level Complete UI")]
+    [SerializeField]
+    GameObject _levelCompleteUI;
+    [SerializeField]
+    RectTransform _levelCompleteTitle;
+    [SerializeField]
+    RectTransform _nextLevelButton;
+
+    [Header("Gameplay UI")]
+    [SerializeField]
+    RectTransform _gameplayUI;
 
     [Header("Chances Text")]
     [SerializeField]
@@ -14,7 +34,13 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _score;
     [SerializeField]
-    TextMeshProUGUI _combo; 
+    TextMeshProUGUI _combo;
+
+    [Header("Triggers")]
+    [SerializeField]
+    RectTransform _leftTrigger;
+    [SerializeField]
+    RectTransform _rightTrigger;
 
     private void Awake()
     {
@@ -27,6 +53,61 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnEnable()
+    {
+        LevelManager.LevelComplete += LevelComplete;
+        GameManager.OnGameOver += OnGameOver;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameOver -= OnGameOver;
+    }
+
+    void OnGameOver()
+    {
+        StartCoroutine(GameOverUI());
+    }
+
+    void LevelComplete()
+    {
+        StartCoroutine(LevelCompleteUI());
+    }
+
+    IEnumerator LevelCompleteUI()
+    {
+        DotweenUtils.MoveUIAndDisable(_gameplayUI, 450, 0.5f);
+        _levelCompleteUI.SetActive(true);
+
+        DotweenUtils.MoveUIAndEnable(_levelCompleteTitle, -750, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_nextLevelButton, 1000, 1.5f);
+
+        _leftTrigger.gameObject.SetActive(false);
+        _rightTrigger.gameObject.SetActive(false);
+
+        yield return null;
+    }
+    
+    IEnumerator GameOverUI()
+    {
+        DotweenUtils.MoveUIAndDisable(_gameplayUI, 450, 0.5f);
+        _gameOverUI.SetActive(true);
+        DotweenUtils.MoveUIAndEnable(_gameOverTitle, -750, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_tryAgainButton, 1000, 1.5f);
+
+        _leftTrigger.gameObject.SetActive(false);
+        _rightTrigger.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (var chance in _chancesTexts)
+        {
+            DotweenUtils.ReversePopoutScale(chance.transform, 1f, 0);
+        }
+
+        yield return null;
     }
 
     public void UpdateScore()

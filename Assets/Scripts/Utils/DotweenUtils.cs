@@ -30,4 +30,21 @@ public static class DotweenUtils
             });
         });
     }
+
+    public static void MoveUIAndDisable(RectTransform target, float Yoffset ,float duration)
+    {
+        target.DOMoveY(target.transform.position.y + Yoffset, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
+        {
+            target.gameObject.SetActive(false);
+        });
+    }
+
+    public static void MoveUIAndEnable(RectTransform target, float Yoffset, float duration)
+    {
+        target.DOMoveY(target.transform.position.y + Yoffset, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
+        {
+            target.gameObject.SetActive(true);
+        });
+    }
+
 }
