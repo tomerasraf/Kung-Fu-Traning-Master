@@ -97,6 +97,13 @@ public class UIManager : MonoBehaviour
 
         UIManager.Instance.UpdateLevelText(LevelManager.instance.Level);
 
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (var chance in _chancesTexts)
+        {
+            DotweenUtils.ReversePopoutScale(chance.transform, 1f, 0);
+        }
+
         yield return null;
     }
 
