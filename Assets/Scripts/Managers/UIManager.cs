@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class UIManager : MonoBehaviour
     [Header("Gameplay UI")]
     [SerializeField]
     RectTransform _gameplayUI;
+    [SerializeField]
+    Image _LevelSlider;
 
     [Header("Chances Text")]
     [SerializeField]
@@ -63,6 +66,7 @@ public class UIManager : MonoBehaviour
 
     private void OnDisable()
     {
+        LevelManager.LevelComplete -= LevelComplete;
         GameManager.OnGameOver -= OnGameOver;
     }
 
@@ -89,7 +93,7 @@ public class UIManager : MonoBehaviour
 
         yield return null;
     }
-    
+
     IEnumerator GameOverUI()
     {
         DotweenUtils.MoveUIAndDisable(_gameplayUI, 450, 0.5f);
@@ -108,6 +112,11 @@ public class UIManager : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public void UpdateLevelSlider(float value)
+    {
+       _LevelSlider.fillAmount = value/100;
     }
 
     public void UpdateScore()
