@@ -47,7 +47,6 @@ public class FlyingObject : MonoBehaviour
 
         // Random torque to make the object spin
         _flyingObjectRB.AddTorque(new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)) * 7, ForceMode.Impulse);
-
     }
 
     // player Hands Hit Virsion

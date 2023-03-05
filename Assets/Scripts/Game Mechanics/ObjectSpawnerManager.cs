@@ -15,7 +15,7 @@ public class ObjectSpawnerManager : MonoBehaviour
 
     private void Awake()
     {
-        levelObjectLimit = LevelManager.instance.Level * 10;
+        levelObjectLimit = LevelManager.instance.Level * 30;
     }
 
     private void Start()

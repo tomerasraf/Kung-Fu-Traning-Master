@@ -9,6 +9,11 @@ public class BrokenObjects : MonoBehaviour
 
     private void Start()
     {
+        AddForceToBrokenPieces();
+    }
+
+    private void AddForceToBrokenPieces()
+    {
         foreach (var piece in brokenPieces)
         {
             piece.AddForce(0, 0, -1 * 6, ForceMode.Impulse);

@@ -8,6 +8,7 @@ TagManager:
   - LeftHitCollider
   - RightHitCollider
   - Floor
+  - FlyingDeadlyObject
   layers:
   - Default
   - TransparentFX
