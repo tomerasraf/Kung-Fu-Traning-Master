@@ -1,4 +1,5 @@
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class RightHitCollider : MonoBehaviour
 {
@@ -32,6 +33,24 @@ public class RightHitCollider : MonoBehaviour
             {
                 if (other.TryGetComponent(out FlyingObject flyingObject))
                 {
+                    MMSoundManagerPlayOptions options;
+                    options = MMSoundManagerPlayOptions.Default;
+
+                    if (flyingObject.name.StartsWith("rice"))
+                    {
+                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakSounds[Mathf.RoundToInt(Random.Range(0, 2))], options);
+                    }
+
+                    if (flyingObject.name.StartsWith("Wood") || flyingObject.name.StartsWith("Bamboo") || flyingObject.name.StartsWith("Smal"))
+                    {
+                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakSounds[Mathf.RoundToInt(Random.Range(2, 4))], options);
+                    }
+
+                    if (flyingObject.name.StartsWith("Water") || flyingObject.name.StartsWith("Teapot"))
+                    {
+                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakSounds[Mathf.RoundToInt(Random.Range(4, 6))], options);
+                    }
+
                     GameManager.instance.ResetChances();
                     ScoreAndCombo.instance.IncreaseCombo();
                     UIManager.Instance.UpdateCombo(flyingObject.transform);

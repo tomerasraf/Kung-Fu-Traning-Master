@@ -10,6 +10,8 @@ public class ObjectSpawnerManager : MonoBehaviour
     [SerializeField]
     GameObject[] _objects;
 
+
+
     private int levelObjectCount = 0;
     private int levelObjectLimit = 0;
 
