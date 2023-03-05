@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -30,11 +31,15 @@ public class PlayerInput : MonoBehaviour
     {
         StartCoroutine(HitLeftState());
         RightTriggerAction?.Invoke();
+        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.PlayerHitSounds[UnityEngine.Random.Range(0, SoundCollection.Instance.PlayerHitSounds.Length)], MMSoundManagerPlayOptions.Default);
+
+
     }
     public void RightTrigger()
     {
         StartCoroutine(HitRightState());
         LeftTriggerAction?.Invoke();
+        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.PlayerHitSounds[UnityEngine.Random.Range(0, SoundCollection.Instance.PlayerHitSounds.Length)], MMSoundManagerPlayOptions.Default);
     }
 
     IEnumerator HitLeftState()
