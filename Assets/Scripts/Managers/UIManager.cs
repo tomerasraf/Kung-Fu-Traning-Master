@@ -95,6 +95,8 @@ public class UIManager : MonoBehaviour
         _leftTrigger.gameObject.SetActive(false);
         _rightTrigger.gameObject.SetActive(false);
 
+        UIManager.Instance.UpdateLevelText(LevelManager.instance.Level);
+
         yield return null;
     }
 
@@ -116,6 +118,12 @@ public class UIManager : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public void UpdateLevelText(int level)
+    {
+        _currentLevelText.text = level.ToString();
+        _nextLevelText.text = (level + 1).ToString();
     }
 
     public void UpdateLevelSlider(float value, float maxValue)
