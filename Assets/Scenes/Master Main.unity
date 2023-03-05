@@ -1248,6 +1248,14 @@ PrefabInstance:
       value: Sounds Collection
       objectReference: {fileID: 0}
     - target: {fileID: 138697718522142599, guid: b1526f7cd3a8325408148fc4ce9d95fc, type: 3}
+      propertyPath: _bombFuse
+      value: 
+      objectReference: {fileID: 8300000, guid: f8f6de25efafaf443be6dc2c345c8b2a, type: 3}
+    - target: {fileID: 138697718522142599, guid: b1526f7cd3a8325408148fc4ce9d95fc, type: 3}
+      propertyPath: _explosion
+      value: 
+      objectReference: {fileID: 8300000, guid: 255c4ce668ee0de4589c77b81d104402, type: 3}
+    - target: {fileID: 138697718522142599, guid: b1526f7cd3a8325408148fc4ce9d95fc, type: 3}
       propertyPath: _failSounds.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 893dab7e19b84c54ca4eb80260bfaca0, type: 3}
@@ -1311,6 +1319,18 @@ PrefabInstance:
       propertyPath: _breakGlassSounds.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 6b3c6613a38572a47b1e1b61a4874bbf, type: 3}
+    - target: {fileID: 138697718522142599, guid: b1526f7cd3a8325408148fc4ce9d95fc, type: 3}
+      propertyPath: _anticipationSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 859e518a85473ce47940f256a91a96b3, type: 3}
+    - target: {fileID: 138697718522142599, guid: b1526f7cd3a8325408148fc4ce9d95fc, type: 3}
+      propertyPath: _anticipationSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c03b8e0f1747fb449b6e30b8f94c0ce6, type: 3}
+    - target: {fileID: 138697718522142599, guid: b1526f7cd3a8325408148fc4ce9d95fc, type: 3}
+      propertyPath: _anticipationSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: a98a8ce98bde9ba4d8e0d9db99f473d1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1526f7cd3a8325408148fc4ce9d95fc, type: 3}
 --- !u!1001 &243917439744746746

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 
 public class FlyingDeadlyObject : MonoBehaviour
@@ -35,6 +36,10 @@ public class FlyingDeadlyObject : MonoBehaviour
 
     public void Explode()
     {
+        AudioSource bombFuse = MMSoundManager.Instance.FindByClip(SoundCollection.Instance.BombFuse);
+        MMSoundManager.Instance.StopSound(bombFuse);
+        
+        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.Explosion, MMSoundManagerPlayOptions.Default);
         _explotionFeedback.PlayFeedbacks();
         _flyingObject.SetActive(false);
     }
@@ -44,6 +49,6 @@ public class FlyingDeadlyObject : MonoBehaviour
         _flyingObjectRB.AddForce(new Vector3(0, 1 * 4, -1 * 8), ForceMode.Impulse);
 
         // Random torque to make the object spin
-        _flyingObjectRB.AddTorque(new Vector3(0, Random.Range(-10, 10) * 1000, 0 ), ForceMode.Impulse);
+        _flyingObjectRB.AddTorque(new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)) * 7, ForceMode.Impulse);
     }
 }

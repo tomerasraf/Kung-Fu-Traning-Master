@@ -64,6 +64,23 @@ public class SoundCollection : MonoBehaviour
         set { _playerHitSounds = value; }
     }
 
+    [Header("Boomb")]
+    [SerializeField]
+    private AudioClip _explosion;
+    public AudioClip Explosion
+    {
+        get { return _explosion; }
+        set { _explosion = value; }
+    }
+
+    [SerializeField]
+    private AudioClip _bombFuse;
+    public AudioClip BombFuse
+    {
+        get { return _bombFuse; }
+        set { _bombFuse = value; }
+    }
+
     [Header("Music")]
     [SerializeField]
     private AudioClip _music;

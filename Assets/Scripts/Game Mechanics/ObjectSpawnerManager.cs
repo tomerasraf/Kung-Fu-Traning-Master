@@ -16,7 +16,7 @@ public class ObjectSpawnerManager : MonoBehaviour
 
     private void Awake()
     {
-        levelObjectLimit = LevelManager.instance.Level * 60;
+        levelObjectLimit = LevelManager.instance.Level * 40;
     }
 
     private void Start()
@@ -31,10 +31,19 @@ public class ObjectSpawnerManager : MonoBehaviour
             LevelManager.instance.CompleteLevel();
             return;
         }
-
-        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.Anticipation[Random.Range(0, SoundCollection.Instance.Anticipation.Length)], MMSoundManagerPlayOptions.Default);
-
+        
         GameObject randomGameObject = _objects[Random.Range(0, _objects.Length)];
+
+        if (randomGameObject.CompareTag("FlyingObject"))
+        {
+            MMSoundManager.Instance.PlaySound(SoundCollection.Instance.Anticipation[Random.Range(0, SoundCollection.Instance.Anticipation.Length)], MMSoundManagerPlayOptions.Default);
+        }
+
+        if (randomGameObject.CompareTag("FlyingDeadlyObject"))
+        {
+            MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BombFuse, MMSoundManagerPlayOptions.Default);
+        }
+            
         Vector3 randomSpawn = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
 
         Instantiate(randomGameObject, randomSpawn, Quaternion.identity * Quaternion.Euler(0, 180, 0));
