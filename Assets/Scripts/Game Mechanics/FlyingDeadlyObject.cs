@@ -26,12 +26,19 @@ public class FlyingDeadlyObject : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Floor"))
         {
+            StartCoroutine(ExplodeAfterTime(2f));
+
             ScoreAndCombo.instance.IncreaseCombo();
             UIManager.Instance.UpdateCombo(collision.transform);
             ScoreAndCombo.instance.AddScore(10);
             UIManager.Instance.UpdateScore();
-            Destroy(this);
         }
+    }
+
+    IEnumerator ExplodeAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Explode();
     }
 
     public void Explode()
@@ -42,6 +49,7 @@ public class FlyingDeadlyObject : MonoBehaviour
         MMSoundManager.Instance.PlaySound(SoundCollection.Instance.Explosion, MMSoundManagerPlayOptions.Default);
         _explotionFeedback.PlayFeedbacks();
         _flyingObject.SetActive(false);
+        Destroy(gameObject, 1f);
     }
 
     void ThrowObject()
