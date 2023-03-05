@@ -33,8 +33,9 @@ public class GameManager : MonoBehaviour
     {
         Chances--;
         UIManager.Instance.UpdateChancesText();
-
-
+        
+        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.FailSounds[Chances], MMSoundManagerPlayOptions.Default);
+        
         if (Chances <= 0)
         {
             isGameOver = true;
