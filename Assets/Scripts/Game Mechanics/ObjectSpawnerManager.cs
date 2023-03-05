@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class ObjectSpawnerManager : MonoBehaviour
 {
@@ -10,14 +11,12 @@ public class ObjectSpawnerManager : MonoBehaviour
     [SerializeField]
     GameObject[] _objects;
 
-
-
     private int levelObjectCount = 0;
     private int levelObjectLimit = 0;
 
     private void Awake()
     {
-        levelObjectLimit = LevelManager.instance.Level * 30;
+        levelObjectLimit = LevelManager.instance.Level * 60;
     }
 
     private void Start()
@@ -32,6 +31,8 @@ public class ObjectSpawnerManager : MonoBehaviour
             LevelManager.instance.CompleteLevel();
             return;
         }
+
+        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.Anticipation[Random.Range(0, SoundCollection.Instance.Anticipation.Length)], MMSoundManagerPlayOptions.Default);
 
         GameObject randomGameObject = _objects[Random.Range(0, _objects.Length)];
         Vector3 randomSpawn = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
@@ -59,7 +60,7 @@ public class ObjectSpawnerManager : MonoBehaviour
             yield return new WaitForSeconds(spawnDelay);
 
             // Reduce the short pause duration by a small amount
-            shortPauseDuration = Mathf.Max(0.35f, shortPauseDuration - 0.05f);
+            shortPauseDuration = Mathf.Max(0.35f, shortPauseDuration - 0.1f);
 
             // Pause for a short duration before starting the next wave of objects
             yield return new WaitForSeconds(shortPauseDuration);

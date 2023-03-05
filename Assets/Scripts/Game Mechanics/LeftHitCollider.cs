@@ -17,6 +17,7 @@ public class LeftHitCollider : MonoBehaviour
             {
                 if (other.TryGetComponent(out FlyingDeadlyObject flyingDeadlyObject))
                 {
+                    flyingDeadlyObject.Explode();
                     GameManager.instance.DecreaseChances();
                     ScoreAndCombo.instance.ResetCombo();
                     Destroy(flyingDeadlyObject);
@@ -38,17 +39,17 @@ public class LeftHitCollider : MonoBehaviour
 
                     if (flyingObject.name.StartsWith("rice"))
                     {
-                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakSounds[Mathf.RoundToInt(Random.Range(0, 2))], options);
+                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakBowlSounds[Random.Range(0, SoundCollection.Instance.BreakBowlSounds.Length)], options);
                     }
 
                     if (flyingObject.name.StartsWith("Wood") || flyingObject.name.StartsWith("Bamboo") || flyingObject.name.StartsWith("Smal"))
                     {
-                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakSounds[Mathf.RoundToInt(Random.Range(2, 4))], options);
+                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakWoodSounds[Random.Range(0, SoundCollection.Instance.BreakWoodSounds.Length)], options);
                     }
 
                     if (flyingObject.name.StartsWith("Water") || flyingObject.name.StartsWith("Teapot"))
                     {
-                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakSounds[Mathf.RoundToInt(Random.Range(4, 6))], options);
+                        MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakGlassSounds[Random.Range(0, SoundCollection.Instance.BreakGlassSounds.Length)], options);
                     }
 
                     GameManager.instance.ResetChances();

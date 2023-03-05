@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3421636066910523144}
   m_Layer: 0
   m_Name: Bomb
-  m_TagString: FlyingDeadlyObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5290,7 +5290,7 @@ GameObject:
   - component: {fileID: 1402797003266484930}
   m_Layer: 0
   m_Name: Bomb
-  m_TagString: Untagged
+  m_TagString: FlyingDeadlyObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5325,7 +5325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9198e4e91ae1614d8098253315cd90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _flyingObject: {fileID: 3782156928104427229}
   _flyingObjectRB: {fileID: 5323168717768738484}
+  _explotionFeedback: {fileID: 4560502316861196793}
 --- !u!54 &5323168717768738484
 Rigidbody:
   m_ObjectHideFlags: 0

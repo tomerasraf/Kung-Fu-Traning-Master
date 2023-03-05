@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Feedbacks;
 
 public class FlyingDeadlyObject : MonoBehaviour
 {
     [SerializeField]
+    GameObject _flyingObject;
+    [SerializeField]
     Rigidbody _flyingObjectRB;
+    [SerializeField]
+    MMF_Player _explotionFeedback; 
 
     private void Start()
     {
@@ -26,6 +31,12 @@ public class FlyingDeadlyObject : MonoBehaviour
             UIManager.Instance.UpdateScore();
             Destroy(this);
         }
+    }
+
+    public void Explode()
+    {
+        _explotionFeedback.PlayFeedbacks();
+        _flyingObject.SetActive(false);
     }
 
     void ThrowObject()

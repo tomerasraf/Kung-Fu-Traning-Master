@@ -16,14 +16,32 @@ public class SoundCollection : MonoBehaviour
         set { _anticipationSounds = value; }
     }
 
-    [Header("Break Sound")]
+    [Header("Break Sounds")]
     [SerializeField]
-    private AudioClip[] _breakSounds;
+    private AudioClip[] _breakBowlSounds;
 
-    public AudioClip[] BreakSounds
+    public AudioClip[] BreakBowlSounds
     {
-        get { return _breakSounds; }
-        set { _breakSounds = value; }
+        get { return _breakBowlSounds; }
+        set { _breakBowlSounds = value; }
+    }
+
+    [SerializeField]
+    private AudioClip[] _breakWoodSounds;
+
+    public AudioClip[] BreakWoodSounds
+    {
+        get { return _breakWoodSounds; }
+        set { _breakWoodSounds = value; }
+    }
+
+    [SerializeField]
+    private AudioClip[] _breakGlassSounds;
+
+    public AudioClip[] BreakGlassSounds
+    {
+        get { return _breakGlassSounds; }
+        set { _breakGlassSounds = value; }
     }
 
     [Header("Fail Sound")]
