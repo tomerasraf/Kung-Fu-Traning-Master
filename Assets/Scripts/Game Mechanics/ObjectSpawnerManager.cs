@@ -36,6 +36,7 @@ public class ObjectSpawnerManager : MonoBehaviour
 
         Instantiate(randomGameObject, randomSpawn, Quaternion.identity * Quaternion.Euler(0, 180, 0));
         levelObjectCount++;
+        UIManager.Instance.UpdateLevelSlider(levelObjectCount, levelObjectLimit);
     }
 
     IEnumerator SpawnObject()

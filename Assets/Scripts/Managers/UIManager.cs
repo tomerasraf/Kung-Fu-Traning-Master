@@ -28,6 +28,10 @@ public class UIManager : MonoBehaviour
     RectTransform _gameplayUI;
     [SerializeField]
     Image _LevelSlider;
+    [SerializeField]
+    TextMeshProUGUI _currentLevelText;
+    [SerializeField]
+    TextMeshProUGUI _nextLevelText;
 
     [Header("Chances Text")]
     [SerializeField]
@@ -114,9 +118,9 @@ public class UIManager : MonoBehaviour
         yield return null;
     }
 
-    public void UpdateLevelSlider(float value)
+    public void UpdateLevelSlider(float value, float maxValue)
     {
-       _LevelSlider.fillAmount = value/100;
+        _LevelSlider.fillAmount = value / maxValue;
     }
 
     public void UpdateScore()
