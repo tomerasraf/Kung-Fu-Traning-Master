@@ -26,6 +26,7 @@ public class FlyingDeadlyObject : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Floor"))
         {
+            _flyingObjectRB.AddForce(new Vector3(0, 0, -1 * 2), ForceMode.Impulse);
             StartCoroutine(ExplodeAfterTime(2f));
 
             ScoreAndCombo.instance.IncreaseCombo();

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4555174433836381287}
   - component: {fileID: 619491884230589378}
   - component: {fileID: 3421636066910523144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4281869236720805832}
   - component: {fileID: 4560502316861196793}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Feedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 5063568016930696690}
   - component: {fileID: 4942134981173441668}
   - component: {fileID: 4941526297493565306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SoftFireBigRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5288,7 +5288,7 @@ GameObject:
   - component: {fileID: 4192835612663501292}
   - component: {fileID: 5323168717768738484}
   - component: {fileID: 1402797003266484930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bomb
   m_TagString: FlyingDeadlyObject
   m_Icon: {fileID: 0}
@@ -5368,7 +5368,7 @@ GameObject:
   - component: {fileID: 6825642698157331735}
   - component: {fileID: 6825642698138021409}
   - component: {fileID: 6825642698138002695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StarDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10178,7 +10178,7 @@ GameObject:
   - component: {fileID: 6825642698157352543}
   - component: {fileID: 6825642698138028859}
   - component: {fileID: 6825642698138006453}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CentralOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15015,7 +15015,7 @@ GameObject:
   - component: {fileID: 6825642698157417491}
   - component: {fileID: 6825642698137949399}
   - component: {fileID: 6825642698139895615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Nova
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19789,7 +19789,7 @@ GameObject:
   - component: {fileID: 6825642698157353671}
   - component: {fileID: 6825642698138052875}
   - component: {fileID: 6825642698139918551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24581,7 +24581,7 @@ GameObject:
   - component: {fileID: 6825642698157342137}
   - component: {fileID: 6825642698137951633}
   - component: {fileID: 6825642698139942719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29391,7 +29391,7 @@ GameObject:
   - component: {fileID: 6825642698157349903}
   - component: {fileID: 6825642698137928489}
   - component: {fileID: 6825642698139936849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MagicExplosionFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34223,7 +34223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3032816759438712316}
   - component: {fileID: 3247736802854572648}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
