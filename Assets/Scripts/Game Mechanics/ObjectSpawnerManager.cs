@@ -13,6 +13,8 @@ public class ObjectSpawnerManager : MonoBehaviour
     Transform[] _spawnPoints;
     [SerializeField]
     GameObject[] _objects;
+    [SerializeField]
+    int _levelObjectLimitTimeTheLevelNumber;
 
     private int levelObjectCount = 0;
     private int levelObjectLimit = 0;
@@ -25,7 +27,7 @@ public class ObjectSpawnerManager : MonoBehaviour
     private void Start()
     {
         levelObjectCount = 0;
-        levelObjectLimit = ES3.Load<int>("Level", 1) * 40;
+        levelObjectLimit = ES3.Load<int>("Level", 1) * _levelObjectLimitTimeTheLevelNumber;
         if(LevelManager.instance.Level > 1)
         {
             StartSpawning();
