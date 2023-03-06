@@ -47,6 +47,7 @@ MonoBehaviour:
     - MoreMountains.Feedbacks.TextMeshPro
     - MoreMountains.Feedbacks.URP
     - MoreMountains.Tools
+    - Purchasing.Common
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

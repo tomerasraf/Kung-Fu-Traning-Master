@@ -49,6 +49,18 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     RectTransform _rightTrigger;
 
+    [Header("Tutorial")]
+    [SerializeField]
+    GameObject _tutorialUI;
+
+    [Header("Screen Load")]
+    [SerializeField]
+    GameObject _screenLoadUI;
+    [SerializeField]
+    RectTransform _LeftScreenLoad;
+    [SerializeField]
+    RectTransform _RightScreenLoad;
+
     private void Awake()
     {
        Instance = this;
@@ -66,16 +78,51 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameOver -= OnGameOver;
     }
 
+    private void Start()
+    {
+        LoadScreenOpen();
+    }
+
+    void LoadScreenOpen()
+    {
+        if(LevelManager.instance.Level == 1)
+        {
+            _tutorialUI.SetActive(true);
+        }
+
+        _screenLoadUI.SetActive(true);
+        DotweenUtils.MoveUIAndEnable(_LeftScreenLoad, 3000, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_RightScreenLoad, -3000, 1.5f);
+    }
+
+    public void LoadScreenClose()
+    {
+        StartCoroutine(ScreenClose());
+    }
+   
     void OnGameOver()
     {
         StartCoroutine(GameOverUI());
     }
-
     void LevelComplete()
     {
         StartCoroutine(LevelCompleteUI());
     }
 
+    public void DisableTutorial()
+    {
+        _tutorialUI.SetActive(false);
+        ObjectSpawnerManager.instance.StartSpawning();
+    }
+
+    IEnumerator ScreenClose()
+    {
+        DotweenUtils.MoveUIAndEnable(_LeftScreenLoad, -3000, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_RightScreenLoad, 3000, 1.5f);
+
+        yield return new WaitForSeconds(2f);
+        LevelManager.instance.ReloadLevel();
+    }
     IEnumerator LevelCompleteUI()
     {
         DotweenUtils.MoveUIAndDisable(_gameplayUI, 450, 0.5f);
@@ -98,7 +145,6 @@ public class UIManager : MonoBehaviour
 
         yield return null;
     }
-
     IEnumerator GameOverUI()
     {
         DotweenUtils.MoveUIAndDisable(_gameplayUI, 450, 0.5f);

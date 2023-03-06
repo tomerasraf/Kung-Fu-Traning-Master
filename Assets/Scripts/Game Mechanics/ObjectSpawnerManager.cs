@@ -5,6 +5,8 @@ using ES3Internal;
 
 public class ObjectSpawnerManager : MonoBehaviour
 {
+    public static ObjectSpawnerManager instance;
+
     [SerializeField]
     float _spawnStartDelay = 3f;
     [SerializeField]
@@ -15,10 +17,19 @@ public class ObjectSpawnerManager : MonoBehaviour
     private int levelObjectCount = 0;
     private int levelObjectLimit = 0;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         levelObjectCount = 0;
         levelObjectLimit = ES3.Load<int>("Level", 1) * 40;
+    }
+
+    public void StartSpawning()
+    {
         StartCoroutine(SpawnObject());
     }
 
