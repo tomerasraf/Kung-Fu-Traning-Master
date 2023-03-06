@@ -26,6 +26,10 @@ public class ObjectSpawnerManager : MonoBehaviour
     {
         levelObjectCount = 0;
         levelObjectLimit = ES3.Load<int>("Level", 1) * 40;
+        if(LevelManager.instance.Level > 1)
+        {
+            StartSpawning();
+        }
     }
 
     public void StartSpawning()
