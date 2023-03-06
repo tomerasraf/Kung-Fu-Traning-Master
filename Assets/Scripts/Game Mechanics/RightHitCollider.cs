@@ -47,7 +47,7 @@ public class RightHitCollider : MonoBehaviour
                         MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakWoodSounds[Random.Range(0, SoundCollection.Instance.BreakWoodSounds.Length)], options);
                     }
 
-                    if (flyingObject.name.StartsWith("Water") || flyingObject.name.StartsWith("Teapot"))
+                    if (flyingObject.name.StartsWith("Water") || flyingObject.name.StartsWith("Teapot") || flyingObject.name.StartsWith("Bottle_1") || flyingObject.name.StartsWith("Bottle_2"))
                     {
                         MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakGlassSounds[Random.Range(0, SoundCollection.Instance.BreakGlassSounds.Length)], options);
                     }
