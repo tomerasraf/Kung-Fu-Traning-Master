@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using MoreMountains.Tools;
+using ES3Internal;
 
 public class ObjectSpawnerManager : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class ObjectSpawnerManager : MonoBehaviour
 
     private void Start()
     {
-        levelObjectLimit = LevelManager.instance.Level * 40;
+        levelObjectCount = 0;
+        levelObjectLimit = ES3.Load<int>("Level", 1) * 40;
         StartCoroutine(SpawnObject());
     }
 
