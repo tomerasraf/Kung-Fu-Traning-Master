@@ -20,10 +20,7 @@ public class LevelManager : MonoBehaviour
         instance = this;
 
         Level = ES3.Load<int>("Level", _defaultLevel);
-        if(Level > 3)
-        {
-            Level = 1;
-        }
+       
     }
 
     private void Start()
