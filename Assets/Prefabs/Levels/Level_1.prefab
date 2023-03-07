@@ -265,7 +265,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3939394483761027003
 Transform:
@@ -4999,7 +4999,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3941804861481228515
 Transform:
@@ -9778,7 +9778,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3939039885494362695
 Transform:
@@ -14539,7 +14539,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3939269905368309461
 Transform:
@@ -20289,7 +20289,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7623569486807400795
 Transform:
@@ -22481,6 +22481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tropical_tree_6
       objectReference: {fileID: 0}
+    - target: {fileID: 6483891843562840562, guid: 00fe7d82d2ee6a74e9acc8b8579c6bb1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6543888646125173926, guid: 00fe7d82d2ee6a74e9acc8b8579c6bb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00fe7d82d2ee6a74e9acc8b8579c6bb1, type: 3}
@@ -22499,6 +22503,10 @@ PrefabInstance:
     - target: {fileID: 1498764993746125501, guid: 6b3933089b4080e4c8ea2cec8fb6237d, type: 3}
       propertyPath: m_Name
       value: japan_tree_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498764993746125501, guid: 6b3933089b4080e4c8ea2cec8fb6237d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2271923619694581767, guid: 6b3933089b4080e4c8ea2cec8fb6237d, type: 3}
       propertyPath: m_RootOrder
@@ -22607,6 +22615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: japan_tree_5
       objectReference: {fileID: 0}
+    - target: {fileID: 1974452364777945517, guid: 3bfe71d14587889448d07b5762b3bc04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7869131328452845019, guid: 3bfe71d14587889448d07b5762b3bc04, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3bfe71d14587889448d07b5762b3bc04, type: 3}
@@ -22682,6 +22694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tropical_tree_6 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6483891843562840562, guid: 00fe7d82d2ee6a74e9acc8b8579c6bb1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6543888646125173926, guid: 00fe7d82d2ee6a74e9acc8b8579c6bb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00fe7d82d2ee6a74e9acc8b8579c6bb1, type: 3}
@@ -22700,6 +22716,10 @@ PrefabInstance:
     - target: {fileID: 1189697970725198, guid: f523a2cbd0582cf4fa53d990c07bb2a4, type: 3}
       propertyPath: m_Name
       value: Firefly
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189697970725198, guid: f523a2cbd0582cf4fa53d990c07bb2a4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4904941974411544, guid: f523a2cbd0582cf4fa53d990c07bb2a4, type: 3}
       propertyPath: m_RootOrder
@@ -22771,6 +22791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: japan_tree_4
       objectReference: {fileID: 0}
+    - target: {fileID: 3858604118892427827, guid: c0c7d425d4ac7c24eae846a15524350b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4523677448457511049, guid: c0c7d425d4ac7c24eae846a15524350b, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -22833,6 +22857,10 @@ PrefabInstance:
     - target: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
       propertyPath: m_Name
       value: SmokeExplosionWhite (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 443696, guid: fe394d041df1a0547990f49cf653249f, type: 3}
       propertyPath: m_RootOrder
@@ -22927,6 +22955,10 @@ PrefabInstance:
     - target: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
       propertyPath: m_Name
       value: SmokeExplosionWhite (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 443696, guid: fe394d041df1a0547990f49cf653249f, type: 3}
       propertyPath: m_RootOrder
@@ -23030,6 +23062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmokeExplosionWhite (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 443696, guid: fe394d041df1a0547990f49cf653249f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -23124,6 +23160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmokeExplosionWhite
       objectReference: {fileID: 0}
+    - target: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 443696, guid: fe394d041df1a0547990f49cf653249f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -23205,6 +23245,10 @@ PrefabInstance:
     - target: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
       propertyPath: m_Name
       value: SmokeExplosionWhite (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 443696, guid: fe394d041df1a0547990f49cf653249f, type: 3}
       propertyPath: m_RootOrder
