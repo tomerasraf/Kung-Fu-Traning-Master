@@ -13,7 +13,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     RectTransform _gameOverTitle;
     [SerializeField]
-    RectTransform _tryAgainButton;
+    RectTransform _tryAgainButtonRect;
+    [SerializeField]
+    Button _tryAgainButton;
 
     [Header("Level Complete UI")]
     [SerializeField]
@@ -21,7 +23,15 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     RectTransform _levelCompleteTitle;
     [SerializeField]
-    RectTransform _nextLevelButton;
+    RectTransform _borderScoreCombo;
+    [SerializeField]
+    TextMeshProUGUI _winScreenScoreText;
+    [SerializeField]
+    TextMeshProUGUI _winScreenComboText;
+    [SerializeField]
+    RectTransform _nextLevelButtonRect;
+    [SerializeField]
+    Button _nextLevelButton;
 
     [Header("Gameplay UI")]
     [SerializeField]
@@ -35,7 +45,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Chances Text")]
     [SerializeField]
-    private TextMeshProUGUI[] _chancesTexts;
+    TextMeshProUGUI[] _chancesTexts;
 
     [Header("Score & Combo")]
     [SerializeField]
@@ -117,6 +127,9 @@ public class UIManager : MonoBehaviour
 
     IEnumerator ScreenClose()
     {
+        _tryAgainButton.enabled = false;
+        _nextLevelButton.enabled = false;
+
         DotweenUtils.MoveUIAndEnable(_LeftScreenLoad, -3000, 1.5f);
         DotweenUtils.MoveUIAndEnable(_RightScreenLoad, 3000, 1.5f);
 
@@ -129,7 +142,8 @@ public class UIManager : MonoBehaviour
         _levelCompleteUI.SetActive(true);
 
         DotweenUtils.MoveUIAndEnable(_levelCompleteTitle, -750, 1.5f);
-        DotweenUtils.MoveUIAndEnable(_nextLevelButton, 1000, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_nextLevelButtonRect, 850, 1.5f);
+        DotweenUtils.ScoreComboUIFormSide(_borderScoreCombo, 1450, 1.5f, _winScreenScoreText, _winScreenComboText);
 
         _leftTrigger.gameObject.SetActive(false);
         _rightTrigger.gameObject.SetActive(false);
@@ -150,7 +164,7 @@ public class UIManager : MonoBehaviour
         DotweenUtils.MoveUIAndDisable(_gameplayUI, 450, 0.5f);
         _gameOverUI.SetActive(true);
         DotweenUtils.MoveUIAndEnable(_gameOverTitle, -750, 1.5f);
-        DotweenUtils.MoveUIAndEnable(_tryAgainButton, 1000, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_tryAgainButtonRect, 1000, 1.5f);
 
         _leftTrigger.gameObject.SetActive(false);
         _rightTrigger.gameObject.SetActive(false);

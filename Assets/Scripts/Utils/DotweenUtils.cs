@@ -1,6 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using ES3Internal;
 
 public static class DotweenUtils
 {
@@ -44,6 +45,18 @@ public static class DotweenUtils
         target.DOMoveY(target.transform.position.y + Yoffset, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
             target.gameObject.SetActive(true);
+        });
+    }
+
+    public static void ScoreComboUIFormSide(RectTransform target, float Xoffset, float duration, TextMeshProUGUI score, TextMeshProUGUI combo)
+    {
+        target.DOMoveX(target.transform.position.x + Xoffset, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
+        {
+            score.DOCounter(0, ScoreAndCombo.instance.Score, 1f).OnComplete(() =>
+            {
+                combo.DOCounter(0, ES3.Load<int>("BestCombo", 1), 1f);
+            });
+            
         });
     }
 
