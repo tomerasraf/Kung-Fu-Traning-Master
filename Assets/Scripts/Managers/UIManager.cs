@@ -11,9 +11,13 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     GameObject _gameOverUI;
     [SerializeField]
+    RectTransform _gameOverTargetPosition;
+    [SerializeField]
     RectTransform _gameOverTitle;
     [SerializeField]
     RectTransform _tryAgainButtonRect;
+    [SerializeField]
+    RectTransform _tryAgainButtonTargetPosition;
     [SerializeField]
     Button _tryAgainButton;
 
@@ -23,7 +27,11 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     RectTransform _levelCompleteTitle;
     [SerializeField]
+    RectTransform _levelCompleteTitleTargetPosition;
+    [SerializeField]
     RectTransform _borderScoreCombo;
+    [SerializeField]
+    RectTransform _borderScoreComboTargetPosition;
     [SerializeField]
     TextMeshProUGUI _winScreenScoreText;
     [SerializeField]
@@ -31,11 +39,15 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     RectTransform _nextLevelButtonRect;
     [SerializeField]
+    RectTransform _nextLevelButtonTargetPosition;
+    [SerializeField]
     Button _nextLevelButton;
 
     [Header("Gameplay UI")]
     [SerializeField]
     RectTransform _gameplayUI;
+    [SerializeField]
+    RectTransform _gameplayUITargetPosition;
     [SerializeField]
     Image _LevelSlider;
     [SerializeField]
@@ -67,13 +79,21 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     GameObject _screenLoadUI;
     [SerializeField]
-    RectTransform _LeftScreenLoad;
+    RectTransform _leftScreenLoad;
     [SerializeField]
-    RectTransform _RightScreenLoad;
+    RectTransform _leftScreenLoadTargetPosition;
+    [SerializeField]
+    RectTransform _rightScreenLoad;
+    [SerializeField]
+    RectTransform _rightScreenLoadTargetPosition;
+    [SerializeField]
+    RectTransform _leftScreenLoadStartPosition;
+    [SerializeField]
+    RectTransform _rightScreenLoadStartPosition;
 
     private void Awake()
     {
-       Instance = this;
+        Instance = this;
     }
 
     private void OnEnable()
@@ -101,8 +121,8 @@ public class UIManager : MonoBehaviour
         }
 
         _screenLoadUI.SetActive(true);
-        DotweenUtils.MoveUIAndEnable(_LeftScreenLoad, 3000, 1.5f);
-        DotweenUtils.MoveUIAndEnable(_RightScreenLoad, -3000, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_leftScreenLoad, _leftScreenLoadTargetPosition, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_rightScreenLoad, _rightScreenLoadTargetPosition, 1.5f);
     }
 
     public void LoadScreenClose()
@@ -130,20 +150,20 @@ public class UIManager : MonoBehaviour
         _tryAgainButton.enabled = false;
         _nextLevelButton.enabled = false;
 
-        DotweenUtils.MoveUIAndEnable(_LeftScreenLoad, -3000, 1.5f);
-        DotweenUtils.MoveUIAndEnable(_RightScreenLoad, 3000, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_leftScreenLoad, _leftScreenLoadStartPosition, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_rightScreenLoad, _rightScreenLoadStartPosition, 1.5f);
 
         yield return new WaitForSeconds(2f);
         LevelManager.instance.ReloadLevel();
     }
     IEnumerator LevelCompleteUI()
     {
-        DotweenUtils.MoveUIAndDisable(_gameplayUI, 450, 0.5f);
+        DotweenUtils.MoveUIAndDisable(_gameplayUI, _gameplayUITargetPosition, 0.5f);
         _levelCompleteUI.SetActive(true);
 
-        DotweenUtils.MoveUIAndEnable(_levelCompleteTitle, -750, 1.5f);
-        DotweenUtils.MoveUIAndEnable(_nextLevelButtonRect, 850, 1.5f);
-        DotweenUtils.ScoreComboUIFormSide(_borderScoreCombo, 1450, 1.5f, _winScreenScoreText, _winScreenComboText);
+        DotweenUtils.MoveUIAndEnable(_levelCompleteTitle, _levelCompleteTitleTargetPosition, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_nextLevelButtonRect, _nextLevelButtonTargetPosition, 1.5f);
+        DotweenUtils.ScoreComboUIFormSide(_borderScoreCombo, _borderScoreComboTargetPosition, 1.5f, _winScreenScoreText, _winScreenComboText);
 
         _leftTrigger.gameObject.SetActive(false);
         _rightTrigger.gameObject.SetActive(false);
@@ -161,10 +181,10 @@ public class UIManager : MonoBehaviour
     }
     IEnumerator GameOverUI()
     {
-        DotweenUtils.MoveUIAndDisable(_gameplayUI, 450, 0.5f);
+        DotweenUtils.MoveUIAndDisable(_gameplayUI, _gameplayUITargetPosition, 0.5f);
         _gameOverUI.SetActive(true);
-        DotweenUtils.MoveUIAndEnable(_gameOverTitle, -750, 1.5f);
-        DotweenUtils.MoveUIAndEnable(_tryAgainButtonRect, 1000, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_gameOverTitle, _gameOverTargetPosition, 1.5f);
+        DotweenUtils.MoveUIAndEnable(_tryAgainButtonRect, _tryAgainButtonTargetPosition, 1.5f);
 
         _leftTrigger.gameObject.SetActive(false);
         _rightTrigger.gameObject.SetActive(false);

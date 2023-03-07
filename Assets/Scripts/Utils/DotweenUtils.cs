@@ -32,29 +32,32 @@ public static class DotweenUtils
         });
     }
 
-    public static void MoveUIAndDisable(RectTransform target, float Yoffset ,float duration)
+    public static void MoveUIAndDisable(RectTransform UI, RectTransform targetPos ,float duration)
     {
-        target.DOMoveY(target.transform.position.y + Yoffset, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
+        UI.DOMove(targetPos.position, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
-            target.gameObject.SetActive(false);
+            UI.gameObject.SetActive(false);
         });
     }
 
-    public static void MoveUIAndEnable(RectTransform target, float Yoffset, float duration)
+    public static void MoveUIAndEnable(RectTransform UI, RectTransform targetPos, float duration)
     {
-        target.DOMoveY(target.transform.position.y + Yoffset, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
+        UI.DOMove(targetPos.position, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
-            target.gameObject.SetActive(true);
+            UI.gameObject.SetActive(true);
         });
     }
 
-    public static void ScoreComboUIFormSide(RectTransform target, float Xoffset, float duration, TextMeshProUGUI score, TextMeshProUGUI combo)
+    public static void ScoreComboUIFormSide(RectTransform UI, RectTransform targetPos, float duration, TextMeshProUGUI score, TextMeshProUGUI combo)
     {
-        target.DOMoveX(target.transform.position.x + Xoffset, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
+        UI.DOMove(targetPos.position, duration).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
             score.DOCounter(0, ScoreAndCombo.instance.Score, 1f).OnComplete(() =>
             {
-                combo.DOCounter(0, ES3.Load<int>("BestCombo", 1), 1f);
+                combo.DOCounter(0, ES3.Load<int>("BestCombo", 1), 1f).OnUpdate(() =>
+                {
+                    combo.text = combo.text + "X";
+                });
             });
             
         });
