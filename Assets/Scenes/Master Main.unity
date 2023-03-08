@@ -1342,6 +1342,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 580652363}
+    - target: {fileID: 1709043881497840939, guid: b9d1d7ba3582f794ea1404adee203d28, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 36.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d1d7ba3582f794ea1404adee203d28, type: 3}
 --- !u!1001 &2325693371282576180
@@ -1469,14 +1473,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1926216594}
+    - target: {fileID: 2303698379285792163, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2343283333069308079, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1926216594}
+    - target: {fileID: 2749021158522875242, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
+      propertyPath: m_text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761057846578146590, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 105.7004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761057846578146590, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 16.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761057846578146590, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.3692932
+      objectReference: {fileID: 0}
     - target: {fileID: 5081329537581641999, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1926216594}
+    - target: {fileID: 5536368101656731555, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 104.9677
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536368101656731555, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 17.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536368101656731555, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.28520203
+      objectReference: {fileID: 0}
     - target: {fileID: 7647451416716674506, guid: d65c6965699b0904f81ec3f641fdc7a2, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2310,6 +2346,10 @@ PrefabInstance:
     - target: {fileID: 7758374243364390368, guid: 83529f431f2584c48a5af2e950b57fc3, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758374243364390370, guid: 83529f431f2584c48a5af2e950b57fc3, type: 3}
+      propertyPath: field of view
+      value: 36.4
       objectReference: {fileID: 0}
     - target: {fileID: 7758374243364390373, guid: 83529f431f2584c48a5af2e950b57fc3, type: 3}
       propertyPath: m_RootOrder
