@@ -3,10 +3,27 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
+    public static PlayerAnim Instance;
+
     [SerializeField]
     Animator _anim;
     [SerializeField]
     float _attackDuration = 0.5f;
+    [SerializeField]
+    GameObject playerSkin;
+    [SerializeField]
+    GameObject playerBlindFold;
+    [SerializeField]
+    GameObject playerRagdoll;
+    [SerializeField]
+    Rigidbody ragdollRb;
+
+    private float torqueForce = 5000f;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void OnEnable()
     {
@@ -20,6 +37,17 @@ public class PlayerAnim : MonoBehaviour
         PlayerInput.LeftTriggerAction -= LeftTrigger;
     }
 
+    public void PlayerExplode(Vector3 force)
+    {
+        _anim.enabled = false;
+        playerSkin.SetActive(false);
+        playerBlindFold.SetActive(false);
+        playerRagdoll.SetActive(true);
+
+        ragdollRb.AddForce(force, ForceMode.VelocityChange);
+
+        ragdollRb.AddTorque(new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)) * torqueForce, ForceMode.Acceleration);
+    }
     private void LeftTrigger()
     {
         StartCoroutine(TriggerAttackAnim("Left Trigger", "Right Trigger"));

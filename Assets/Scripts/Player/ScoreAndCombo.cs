@@ -43,6 +43,12 @@ public class ScoreAndCombo : MonoBehaviour
     {
         if(PlayerHits >= 5)
         Combo++;
+
+        if(Combo >= 10)
+        {
+            GameManager.instance.ResetChances();
+        }
+
         BestComboSaver();
     }
 

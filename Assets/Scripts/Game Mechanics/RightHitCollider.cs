@@ -18,7 +18,8 @@ public class RightHitCollider : MonoBehaviour
                 if (other.TryGetComponent(out FlyingDeadlyObject flyingDeadlyObject))
                 {
                     flyingDeadlyObject.Explode();
-                    GameManager.instance.DecreaseChances();
+                    PlayerAnim.Instance.PlayerExplode(new Vector3(1 * 10f, 1 * 35f, 0));
+                    GameManager.instance.InstantDeath();
                     ScoreAndCombo.instance.ResetCombo();
                     Destroy(flyingDeadlyObject);
                 }
@@ -52,7 +53,6 @@ public class RightHitCollider : MonoBehaviour
                         MMSoundManager.Instance.PlaySound(SoundCollection.Instance.BreakGlassSounds[Random.Range(0, SoundCollection.Instance.BreakGlassSounds.Length)], options);
                     }
 
-                    GameManager.instance.ResetChances();
                     ScoreAndCombo.instance.IncreaseCombo();
                     UIManager.Instance.UpdateCombo(flyingObject.transform);
                     ScoreAndCombo.instance.AddScore(5);

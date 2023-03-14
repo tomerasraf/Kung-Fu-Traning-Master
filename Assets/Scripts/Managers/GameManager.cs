@@ -21,13 +21,24 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+    public void InstantDeath()
+    {
+        Chances = 0;
+        GameOver();
+    }
+
     public void DecreaseChances()
     {
         Chances--;
         UIManager.Instance.UpdateChancesText();
-        
+
         MMSoundManager.Instance.PlaySound(SoundCollection.Instance.FailSounds[Chances], MMSoundManagerPlayOptions.Default);
-        
+
+        GameOver();
+    }
+
+    private void GameOver()
+    {
         if (Chances <= 0)
         {
             isGameOver = true;
